@@ -56,10 +56,18 @@ pipeline {
 
                                 cd /home/ec2-user/app/
 
+                                python3 -m venv venv
+
                                 source /home/ec2-user/app/venv/bin/activate
+                                
 
-                                pip install -r requirements.txt
+                                python3 -m pip install --upgrade pip
+                                python3 -m pip install -r requirements.txt
 
+                                sudo cp /home/ec2-user/app/flask.service /etc/systemd/system/flaskapp.service
+
+                                sudo systemctl daemon-reload
+                                sudo systemctl enable flaskapp.service
                                 sudo systemctl restart flaskapp.service
 EOF
                         '''
