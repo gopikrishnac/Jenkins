@@ -17,7 +17,7 @@ pipeline {
         stage('Test') {
             steps {
                 dir('02-single-server-deployment') {
-                    sh 'pytest'
+                    sh 'python3 -m pytest'
                 }
             }
         }
