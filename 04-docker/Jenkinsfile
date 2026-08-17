@@ -34,11 +34,13 @@ pipeline {
         stage('Build Docker Image')
         {
             steps
+            directory('04-docker'){
             {
                 sh 'docker build -t ${IMAGE_TAG} .'
                 echo "Docker image build successfully"
                 sh 'docker image ls'
                 
+            }
             }
         }
 
