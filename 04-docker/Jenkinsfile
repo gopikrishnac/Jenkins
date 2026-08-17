@@ -12,12 +12,14 @@ pipeline {
 
         stage('Setup') {
             steps {
-                sh "pip install -r requirements.txt"
+                sh "pip install -r 04-docker/requirements.txt"
             }
         }
         stage('Test') {
             steps {
-                sh "pytest"
+                dir('04-docker') {
+                    sh "pytest"
+                }
             }
         }
 
