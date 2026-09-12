@@ -1,0 +1,30 @@
+The DevOps team at xFusionCorp Industries is initiating the setup of CI/CD pipelines and has decided to utilize Jenkins as their server. Execute the task according to the provided requirements:
+
+
+
+1. Install Jenkins on the jenkins server using the apt utility only, and start it using the service command.
+
+If you face a timeout issue while starting the Jenkins service, first check the service status with service jenkins status
+Then review the logs in /var/log/jenkins/jenkins.log to identify the cause.
+2. Jenkin's admin user name should be theadmin, password should be Adm!n321, full name should be Kirsty and email should be kirsty@jenkins.stratos.xfusioncorp.com.
+
+
+Note:
+
+1. To access the jenkins server, connect from the jump host using the root user with the password S3curePass.
+
+2. After Jenkins server installation, click the Jenkins button on the top bar to access the Jenkins UI and follow on-screen instructions to create an admin user.
+
+
+
+
+
+To install Jenkins on server we need to go throuh below Jenkins official page
+
+[text](https://www.jenkins.io/doc/book/installing/linux/#fedora)
+
+ss -tulpn | grep 8080
+
+java -jar /usr/share/java/jenkins.war
+
+curl -I http://localhost:8080
